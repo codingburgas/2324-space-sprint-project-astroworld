@@ -1,8 +1,7 @@
 #include "menu.h"
-#include "textures.h"
+#include "game.h"
 void mainMenu()
 {
-    Textures* texture = new Textures();
     const int screenWidth = 1920;
     const int screenHeight = 975;
     InitWindow(screenWidth, screenHeight, "ASTROWORLD");
@@ -23,7 +22,7 @@ void mainMenu()
         DrawRectangleRec(startButton, (isMouseOverButtonStart ? ORANGE : GRAY));
         DrawText("Start", screenWidth / 2 - 440, screenHeight / 2 - 25, 50, BLACK);
         if (isMouseOverButtonStart && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
-            
+            game();
         }
 
         bool isMouseOverButtonRules = CheckCollisionPointRec(mousePosition, rulesButton);
