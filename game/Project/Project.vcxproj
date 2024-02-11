@@ -134,9 +134,11 @@
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="rules.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h" />
+    <ClInclude Include="rules.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>

@@ -1,5 +1,6 @@
 #include "menu.h"
 #include "game.h"
+#include "rules.h"
 void mainMenu()
 {
     const int screenWidth = 1920;
@@ -30,7 +31,7 @@ void mainMenu()
         DrawRectangleRec(rulesButton, (isMouseOverButtonRules ? ORANGE : GRAY));
         DrawText("Rules", screenWidth / 2 + 360, screenHeight / 2 - 25, 50, BLACK);
         if (isMouseOverButtonRules && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
-            
+            rules();
         }
 
         bool isMouseOverButtonExit = CheckCollisionPointRec(mousePosition, exitButton);
