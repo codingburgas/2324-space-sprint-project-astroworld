@@ -1,12 +1,5 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Project.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  rules.cpp
-C:\Users\user\OneDrive - ПГКПИ - Бургас\Documents\2324-space-sprint-project-astroworld\game\Project\rules.cpp(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\user\OneDrive - ПГКПИ - Бургас\Documents\2324-space-sprint-project-astroworld\game\Project\rules.cpp(7,47): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\user\OneDrive - ПГКПИ - Бургас\Documents\2324-space-sprint-project-astroworld\game\Project\rules.cpp(7,47): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\user\OneDrive - ПГКПИ - Бургас\Documents\2324-space-sprint-project-astroworld\game\Project\rules.cpp(7,76): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\user\OneDrive - ПГКПИ - Бургас\Documents\2324-space-sprint-project-astroworld\game\Project\rules.cpp(7,76): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\user\OneDrive - ПГКПИ - Бургас\Documents\2324-space-sprint-project-astroworld\game\Project\rules.cpp(29,63): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\user\OneDrive - ПГКПИ - Бургас\Documents\2324-space-sprint-project-astroworld\game\Project\rules.cpp(29,49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\user\OneDrive - ПГКПИ - Бургас\Documents\2324-space-sprint-project-astroworld\game\Project\rules.cpp(29,39): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\user\OneDrive - ПГКПИ - Бургас\Documents\2324-space-sprint-project-astroworld\game\Project\rules.cpp(29,29): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  game.cpp
+C:\Users\user\OneDrive - ПГКПИ - Бургас\Documents\2324-space-sprint-project-astroworld\game\Project\game.cpp(24,49): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\user\OneDrive - ПГКПИ - Бургас\Documents\2324-space-sprint-project-astroworld\game\Project\game.cpp(24,44): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   Project.vcxproj -> C:\Users\user\OneDrive - ПГКПИ - Бургас\Documents\2324-space-sprint-project-astroworld\game\x64\Debug\ASTROWORLD.exe
