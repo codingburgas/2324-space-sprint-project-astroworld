@@ -1,9 +1,17 @@
 #include "game.h"
 
-#define MAX_COLUMNS 20
+#define ROCKS 200
+#define PARTS 6
 void game()
 {
     Texture2D bgPhoto = LoadTexture("../images/bgPhoto.png");
+    Texture2D spacecraftParts[PARTS] = { 
+        LoadTexture("../images/spacecraft/firstPart.png"),         
+        LoadTexture("../images/spacecraft/secondPart.png"),
+        LoadTexture("../images/spacecraft/thirdPart.png"),
+        LoadTexture("../images/spacecraft/fourthPart.png"),
+        LoadTexture("../images/spacecraft/fifthPart.png"),
+        LoadTexture("../images/spacecraft/sixthPart.png") };
     const int screenWidth = 1920;
     const int screenHeight = 975;
     Camera camera = { 0 };
@@ -15,14 +23,14 @@ void game()
 
     int cameraMode = CAMERA_FIRST_PERSON;
     
-    float heights[MAX_COLUMNS] = { 0 };
-    Vector3 Pebblepositions[MAX_COLUMNS] = { 0 };
-
+    float heights[ROCKS] = { 0 };
+    Vector3 rockPositions[ROCKS] = { 0 };
+    Vector3 partsPositions[PARTS] = { 0 };
  
-    for (int i = 0; i < MAX_COLUMNS; i++)
+    for (int i = 0; i < ROCKS; i++)
     {
         heights[i] = (float)GetRandomValue(0.9, 1.0);
-        Pebblepositions[i] = { (float)GetRandomValue(-80,80), heights[i] / 2.0f, (float)GetRandomValue(-25, 25) };
+        rockPositions[i] = { (float)GetRandomValue(-110,110), heights[i] / 2.0f, (float)GetRandomValue(-100, 100) };
     }
  
     DisableCursor();                  
@@ -39,14 +47,14 @@ void game()
         DrawTexture(bgPhoto, 0, 0, WHITE);
         BeginMode3D(camera);
 
-        DrawPlane( { 0.0f, 0.0f, 0.0f },{ 164.0f, 164.0f }, RED);
-        for (int i = 0; i < MAX_COLUMNS; i++)
+        DrawPlane( { 0.0f, 0.0f, 0.0f },{ 250.0f, 250.0f }, { 192, 96, 0, 250});
+        for (int i = 0; i < ROCKS; i++)
         {
-            DrawCube(Pebblepositions[i], 1.5f, { 0.9f }, 1.5f, LIGHTGRAY);
+            DrawCube(rockPositions[i], 1.5f, { 0.9f }, 1.5f, { 138, 69, 0, 250});
         }
         
         EndMode3D();
-      
+
         EndDrawing();
     }
  
