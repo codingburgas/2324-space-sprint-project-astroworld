@@ -3,7 +3,7 @@
 #define MAX_COLUMNS 20
 void game()
 {
-    Texture2D bgPhoto = LoadTexture("../images/spacePhotoBG.png");
+    Texture2D bgPhoto = LoadTexture("../images/bgPhoto.png");
     const int screenWidth = 1920;
     const int screenHeight = 975;
     Camera camera = { 0 };
