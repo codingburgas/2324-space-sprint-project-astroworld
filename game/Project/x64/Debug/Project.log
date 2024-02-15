@@ -1,5 +1,15 @@
-﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Project.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  game.cpp
-C:\Users\Asus\Desktop\2324-space-sprint-project-astroworld\game\Project\game.cpp(32,49): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Asus\Desktop\2324-space-sprint-project-astroworld\game\Project\game.cpp(32,44): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-  Project.vcxproj -> C:\Users\Asus\Desktop\2324-space-sprint-project-astroworld\game\x64\Debug\ASTROWORLD.exe
+﻿D:\School\Visual Studio\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Project.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  rules.cpp
+D:\School\2324-space-sprint-project-astroworld\game\Project\rules.cpp(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+D:\School\2324-space-sprint-project-astroworld\game\Project\rules.cpp(7,47): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+D:\School\2324-space-sprint-project-astroworld\game\Project\rules.cpp(7,47): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\School\2324-space-sprint-project-astroworld\game\Project\rules.cpp(7,76): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+D:\School\2324-space-sprint-project-astroworld\game\Project\rules.cpp(7,76): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\School\2324-space-sprint-project-astroworld\game\Project\rules.cpp(25,63): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\School\2324-space-sprint-project-astroworld\game\Project\rules.cpp(25,49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\School\2324-space-sprint-project-astroworld\game\Project\rules.cpp(25,39): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\School\2324-space-sprint-project-astroworld\game\Project\rules.cpp(25,29): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+raylib.lib(rcore.c.obj) : warning LNK4099: PDB '' was not found with 'raylib.lib(rcore.c.obj)' or at ''; linking object as if no debug info
+raylib.lib(rmodels.c.obj) : warning LNK4099: PDB '' was not found with 'raylib.lib(rmodels.c.obj)' or at ''; linking object as if no debug info
+raylib.lib(rtextures.c.obj) : warning LNK4099: PDB '' was not found with 'raylib.lib(rtextures.c.obj)' or at ''; linking object as if no debug info
+  Project.vcxproj -> D:\School\2324-space-sprint-project-astroworld\game\x64\Debug\ASTROWORLD.exe
