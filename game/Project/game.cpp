@@ -5,13 +5,13 @@
 void game()
 {
     Texture2D bgPhoto = LoadTexture("../images/bgPhoto.png");
-    Texture2D spacecraftParts[PARTS] = { 
-        LoadTexture("../images/spacecraft/firstPart.png"),         
-        LoadTexture("../images/spacecraft/secondPart.png"),
-        LoadTexture("../images/spacecraft/thirdPart.png"),
-        LoadTexture("../images/spacecraft/fourthPart.png"),
-        LoadTexture("../images/spacecraft/fifthPart.png"),
-        LoadTexture("../images/spacecraft/sixthPart.png") };
+    Texture2D firstPart = LoadTexture ("../images/spacecraft/firstPart.png");
+    Texture2D secondPart = LoadTexture ("../images/spacecraft/secondPart.png");
+    Texture2D thirdPart = LoadTexture ("../images/spacecraft/thirdPart.png");
+    Texture2D fourthPart = LoadTexture ("../images/spacecraft/fourthPart.png");
+    Texture2D fifthPart = LoadTexture ("../images/spacecraft/fifthPart.png");
+    Texture2D sixthPart = LoadTexture ("../images/spacecraft/sixthPart.png");
+
     const int screenWidth = 1920;
     const int screenHeight = 975;
     Camera camera = { 0 };
@@ -45,6 +45,14 @@ void game()
         ClearBackground(RAYWHITE);
 
         DrawTexture(bgPhoto, 0, 0, WHITE);
+
+        DrawTexture(firstPart, 10, 10, WHITE);
+        DrawTexture(secondPart, 20, 20, WHITE);
+        DrawTexture(thirdPart, 30, 30, WHITE);
+        DrawTexture(fourthPart, 40, 40, WHITE);
+        DrawTexture(fifthPart, 50, 50, WHITE);
+        DrawTexture(sixthPart, 60, 60, WHITE);
+
         BeginMode3D(camera);
 
         DrawPlane( { 0.0f, 0.0f, 0.0f },{ 250.0f, 250.0f }, { 192, 96, 0, 250});
