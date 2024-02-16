@@ -1,15 +1,13 @@
 #include "rules.h"
 #include "game.h";
 
-void rules()
-{
-    Vector2 mousePosition = GetMousePosition();
-    Rectangle toGame = { GetScreenWidth() / 2 + 300, GetScreenHeight() / 2 + 350, 300, 100 };
+void story() {
     SetExitKey(KEY_ESCAPE);
-
     while (!WindowShouldClose())
     {
+        Vector2 mousePosition = GetMousePosition();
         BeginDrawing();
+        ClearBackground(SKYBLUE);
         DrawText("press ESC to go back", 75, 915, 20, RAYWHITE);
         DrawRectangleLines(180, 160, 1500, 750, ORANGE);
         DrawFPS(75, 50);
@@ -21,12 +19,37 @@ void rules()
         DrawText("have a certain amount of time before I run out of ", 190, 415, 50, WHITE);
         DrawText("oxygen, my clock is already ticking so be as fast as ", 190, 465, 50, WHITE);
         DrawText("you can!", 190, 515, 50, WHITE);
-        ClearBackground(RED);
-        DrawRectangle(toGame.x, toGame.y, toGame.width, toGame.height, CheckCollisionPointRec(mousePosition, toGame) ? ORANGE : GRAY);
         EndDrawing();
-        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && CheckCollisionPointRec(mousePosition, toGame))
-            game();
-
     }
-    EndDrawing();
+}
+void controls() {
+
+}
+void rules()
+{
+    const Rectangle storyButton = { (GetScreenWidth() / 2) - 110, (GetScreenHeight() / 2) - 240, 270, 100 };
+    const Rectangle controlsButton = { (GetScreenWidth() / 2) - 110, (GetScreenHeight() / 2) - 70, 270, 100 };
+    SetExitKey(KEY_ESCAPE);
+    while (!WindowShouldClose())
+    {
+        Vector2 mousePosition = GetMousePosition();
+        BeginDrawing();
+        ClearBackground(RAYWHITE);
+        bool isMouseOverStoryButton = CheckCollisionPointRec(mousePosition, storyButton);
+        DrawRectangleRec(storyButton, (isMouseOverStoryButton ? SKYBLUE : BLUE));
+        DrawText("Story", GetScreenWidth() / 2 - 55, GetScreenHeight() / 2 - 215, 50, BLACK);
+
+        if (isMouseOverStoryButton && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+            story();
+        }
+
+        bool isMouseOverControls = CheckCollisionPointRec(mousePosition, controlsButton);
+        DrawRectangleRec(controlsButton, (isMouseOverControls ? GREEN : LIME));
+        DrawText("Controls", GetScreenWidth() / 2 - 90, (GetScreenHeight() / 2) - 45, 50, BLACK);
+
+        if (isMouseOverControls && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+            controls();
+        }
+        EndDrawing();
+    }
 }
