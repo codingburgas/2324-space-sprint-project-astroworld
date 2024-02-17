@@ -19,32 +19,32 @@ void game()
     //First spacecraft part object
     Model firstPartobj = LoadModel("../images/spacecraft/objects/firstPart.obj");
     Texture2D firstPartTexture = LoadTexture("..images/spacecraft/firstPart.png");
-    Vector3 positionOne = { 2.5f,0.5f,3.8f };
+    Vector3 positionOne = { 2.5f,2.0f,3.8f };
 
     //Second spacecraft part object
     Model secondPartobj = LoadModel("../images/spacecraft/objects/secondPart.obj");
     Texture2D secondPartTexture = LoadTexture("..images/spacecraft/secondPart.png");
-    Vector3 positionTwo = { -4.0f,0.5f,-4.7f };
+    Vector3 positionTwo = { -4.0f,1.2f,-4.7f };
 
     //Third spacecraft part object 
     Model thirdPartobj = LoadModel("../images/spacecraft/objects/thirdPart.obj");
     Texture2D thirdPartTexture = LoadTexture("..images/spacecraft/thirdPart.png");
-    Vector3 positionThree = { -6.0f,0.5f,4.9f };
+    Vector3 positionThree = { -6.0f,1.2f,4.9f };
 
     //Fourth spacecraft part object
     Model fourthPartobj = LoadModel("../images/spacecraft/objects/fourthPart.obj");
     Texture2D fourthPartTexture = LoadTexture("..images/spacecraft/fourthPart.png");
-    Vector3 positionFour = { 4.6f,0.5f,-5.4f };
+    Vector3 positionFour = { 4.6f,2.0f,-5.4f };
 
     //Fifth spacecraft part object
     Model fifthPartobj = LoadModel("../images/spacecraft/objects/fifthPart.obj");
     Texture2D fifthPartTexture = LoadTexture("..images/spacecraft/fifthPart.png");
-    Vector3 positionFive = { 3.0f,0.5f,-4.0f };
+    Vector3 positionFive = { 3.0f,1.2f,-4.0f };
 
     //Sixth spacecraft part object
     Model sixthPartobj = LoadModel("../images/spacecraft/objects/sixthPart.obj");
     Texture2D sixthPartTexture = LoadTexture("..images/spacecraft/sixthPart.png");
-    Vector3 positionSix = { 5.6f,0.5f,-2.0f };
+    Vector3 positionSix = { 5.6f,1.2f,-2.0f };
 
     //Variables for the camera
     Camera camera = { 0 };
@@ -83,12 +83,12 @@ void game()
         {
             DrawCube(rockPositions[i], 1.5f, { 0.9f }, 1.5f, { 138, 69, 0, 250 });
         }
-        DrawModel(firstPartobj, positionOne, 0.025f, WHITE);
-        DrawModel(secondPartobj, positionTwo, 0.025f, WHITE);
-        DrawModel(thirdPartobj, positionThree, 0.025f, WHITE);
-        DrawModel(fourthPartobj, positionFour, 0.025f, WHITE);
-        DrawModel(fifthPartobj, positionFive, 0.025f, WHITE);
-        DrawModel(sixthPartobj, positionSix, 0.025f, WHITE);
+        DrawModel(firstPartobj, positionOne, 0.05f, RED);
+        DrawModel(secondPartobj, positionTwo, 0.05f, WHITE);
+        DrawModel(thirdPartobj, positionThree, 0.05f, WHITE);
+        DrawModel(fourthPartobj, positionFour, 0.05f, RED);
+        DrawModel(fifthPartobj, positionFive, 0.05f, WHITE);
+        DrawModel(sixthPartobj, positionSix, 0.05f, WHITE);
         EndMode3D();
 
         EndDrawing();
