@@ -17,8 +17,10 @@ void game()
 
 
     //First spacecraft part object
+    Image firstPartImg = LoadImage("..images/spacecraft/firstPart.png");
     Model firstPartobj = LoadModel("../images/spacecraft/objects/firstPart.obj");
     Texture2D firstPartTexture = LoadTexture("..images/spacecraft/firstPart.png");
+    ImageFlipVertical(&firstPartImg);
     Vector3 positionOne = { 102.5f,2.0f,9.8f };
 
     //Second spacecraft part object
@@ -62,7 +64,7 @@ void game()
         rockPositions[i] = { (float)GetRandomValue(-110,110), heights[i] / 2.0f, (float)GetRandomValue(-100, 100) };
     }
     DisableCursor();
-    SetTargetFPS(360);
+    SetTargetFPS(240);
     while (!WindowShouldClose())
     {
 

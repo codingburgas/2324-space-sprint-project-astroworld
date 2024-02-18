@@ -7,7 +7,7 @@ void story() {
     {
         Vector2 mousePosition = GetMousePosition();
         BeginDrawing();
-        ClearBackground(SKYBLUE);
+        ClearBackground(RED);
         DrawText("press ESC to go back", 75, 915, 20, RAYWHITE);
         DrawRectangleLines(180, 160, 1500, 750, ORANGE);
         DrawFPS(75, 50);
@@ -23,7 +23,21 @@ void story() {
     }
 }
 void controls() {
-
+    SetExitKey(KEY_ESCAPE);
+    while (!WindowShouldClose())
+    {
+        Vector2 mousePosition = GetMousePosition();
+        BeginDrawing();
+        ClearBackground(RED);
+        DrawText("press ESC to go back", 75, 915, 20, RAYWHITE);
+        DrawRectangleLines(530, 200, 800, 500, ORANGE);
+        DrawFPS(75, 50);
+        DrawText("W - move forward", 700, 255, 50, WHITE);
+        DrawText("A - move to the left", 700, 365, 50, WHITE);
+        DrawText("S - move backwards", 700, 475, 50, WHITE);
+        DrawText("D - move to the right", 700, 585, 50, WHITE);
+        EndDrawing();
+    }
 }
 void rules()
 {
