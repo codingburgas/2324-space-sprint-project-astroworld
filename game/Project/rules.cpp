@@ -3,22 +3,31 @@
 
 void story() {
     SetExitKey(KEY_ESCAPE);
+    Texture2D astroPhoto = LoadTexture("../images/astronaut.png");
     while (!WindowShouldClose())
     {
         Vector2 mousePosition = GetMousePosition();
         BeginDrawing();
-        ClearBackground(RED);
+        DrawTexture(astroPhoto, 160, 260, RAYWHITE);
+        ClearBackground({ 0, 1, 41, 255 });
         DrawText("press ESC to go back", 75, 915, 20, RAYWHITE);
-        DrawRectangleLines(180, 160, 1500, 750, ORANGE);
-        DrawFPS(75, 50);
-        DrawText("Hi, I'm an astronaut from the planet Earth , but on my", 190, 165, 50, WHITE);
-        DrawText("last expedition my spacecraft exploded and now its parts", 190, 215, 50, WHITE);
-        DrawText("are scattered across the planet Mars. Your mission", 190, 265, 50, WHITE);
-        DrawText("is to help me put them together so I can go back to my", 190, 315, 50, WHITE);
-        DrawText("loved ones and complete my expedition. However, I ", 190, 365, 50, WHITE);
-        DrawText("have a certain amount of time before I run out of ", 190, 415, 50, WHITE);
-        DrawText("oxygen, my clock is already ticking so be as fast as ", 190, 465, 50, WHITE);
-        DrawText("you can!", 190, 515, 50, WHITE);
+        DrawRectangleLines(820, 60, 850, 850, { 0, 91, 241, 255 });
+        
+        DrawText("Hi, I'm an astronaut from the ", 880, 80, 50, WHITE);
+        DrawText("planet Earth, but on my last ", 880, 140, 50, WHITE);
+        DrawText("expedition, my spacecraft ", 900, 200, 50, WHITE);
+        DrawText("exploded and now its parts ", 900, 260, 50, WHITE);
+        DrawText("are scattered across the ", 900, 320, 50, WHITE);
+        DrawText("planet Mars. Your mission is ", 880, 380, 50, WHITE);
+        DrawText("to help me put them together ", 880, 440, 50, WHITE);
+        DrawText("so I can go back to my loved ", 880, 500, 50, WHITE);
+        DrawText("ones and complete my expedition. ", 835, 560, 50, WHITE);
+        DrawText("However, I have a certain ", 880, 620, 50, WHITE);
+        DrawText("amount of time before I run ", 880, 680, 50, WHITE);
+        DrawText("out of oxygen, my clock is ", 880, 740, 50, WHITE);
+        DrawText("already tickingso be as fast ", 880, 800, 50, WHITE);
+        DrawText("as you can! ", 1080, 860, 50, WHITE);
+       
         EndDrawing();
     }
 }

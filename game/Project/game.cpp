@@ -17,10 +17,10 @@ void game()
 
 
     //First spacecraft part object
-    Image firstPartImg = LoadImage("..images/spacecraft/firstPart.png");
+    Rectangle firstPartForm = { 100, 100, 200, 100 };
+    
     Model firstPartobj = LoadModel("../images/spacecraft/objects/firstPart.obj");
     Texture2D firstPartTexture = LoadTexture("..images/spacecraft/firstPart.png");
-    ImageFlipVertical(&firstPartImg);
     Vector3 positionOne = { 102.5f,2.0f,9.8f };
 
     //Second spacecraft part object
@@ -67,9 +67,10 @@ void game()
     SetTargetFPS(240);
     while (!WindowShouldClose())
     {
-
+        
         UpdateCamera(&camera, cameraMode);
-
+        
+        if(CheckCollisionBoxes)
         BeginDrawing();
 
         ClearBackground(RAYWHITE);
