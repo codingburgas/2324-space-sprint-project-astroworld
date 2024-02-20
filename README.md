@@ -5,7 +5,7 @@
 <h1 align="center">📋 Description </h1>
 This is a game about an astronaut from the planet ,,Earth” , but on his last expedition his spacecraft exploded and now his parts are scattered across the planet ,,Mars”. Your job is to help him put them together so he can go back to his loved ones and complete his mission. However, he has a certain amount of time before he runs out of oxygen, his clock is already ticking so be as fast as you can!
 <br>
-<h1 align="center">TEAM MEMBERS 👨🏻‍💻</h1><br>
+<h1 align="center">TEAM MEMBERS 👨🏻‍💻</h1>
 
 
 <table >
