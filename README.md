@@ -7,7 +7,6 @@ This is a game about an astronaut from the planet ,,Earth” , but on his last e
 <br>
 <h1 align="center">TEAM MEMBERS 👨🏻‍💻</h1>
 
-
 <table >
   <tr>
     <td>Name</td>
