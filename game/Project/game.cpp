@@ -10,6 +10,13 @@ void game()
     //Game's background
     Texture2D bgPhoto = LoadTexture("../images/bgPhoto.png");
 
+    // Timer's parameters
+    int minutes = 0;
+    int seconds = 10;
+
+    // Update timer every second
+    float elapsedTime = 0.0f;
+    float updateInterval = 1.0f; 
 
     //Objects
     float heights[ROCKS] = { 0 };
@@ -65,17 +72,43 @@ void game()
     }
     DisableCursor();
     SetTargetFPS(240);
+
     while (!WindowShouldClose())
     {
         
         UpdateCamera(&camera, cameraMode);
-        
-        if(CheckCollisionBoxes)
+
         BeginDrawing();
+
+        //Display timer
+        elapsedTime += GetFrameTime();
+        if (elapsedTime >= updateInterval) 
+        {
+            // Check timer's values
+            if (seconds == 0) 
+            {
+                if (minutes == 0)
+                {
+                    break;
+                    DrawText("You have lost!", 930, 500, 60, WHITE);
+                    minutes--;
+                    seconds = 59;
+                }
+            }
+
+            else 
+            {
+                seconds--;
+            }
+            elapsedTime = 0.0f;
+        }
 
         ClearBackground(RAYWHITE);
 
         DrawTexture(bgPhoto, 0, 0, WHITE);
+
+        //Draw timer
+        DrawText(TextFormat("%02d:%02d", minutes, seconds), 930, 40, 50, RED);
 
         BeginMode3D(camera);
 
