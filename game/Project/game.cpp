@@ -1,4 +1,5 @@
 #include "game.h"
+#include "gameLost.h"
 
 #define ROCKS 200
 void game()
@@ -12,7 +13,7 @@ void game()
 
     // Timer's parameters
     int minutes = 0;
-    int seconds = 10;
+    int seconds = 3;
 
     // Update timer every second
     float elapsedTime = 0.0f;
@@ -89,10 +90,11 @@ void game()
             {
                 if (minutes == 0)
                 {
-                    break;
-                    DrawText("You have lost!", 930, 500, 60, WHITE);
+
+                    gameLost();
                     minutes--;
                     seconds = 59;
+                    break;
                 }
             }
 
