@@ -12,6 +12,7 @@ void gameLost()
 	
 	Vector2 mousePosition;
 	EnableCursor();
+	SetTargetFPS(240);
 	while (!WindowShouldClose())
 	{
 		

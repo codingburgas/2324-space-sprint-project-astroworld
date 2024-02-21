@@ -12,8 +12,8 @@ void game()
     Texture2D bgPhoto = LoadTexture("../images/bgPhoto.png");
 
     // Timer's parameters
-    int minutes = 0;
-    int seconds = 3;
+    int minutes = 5;
+    int seconds = 0;
 
     // Update timer every second
     float elapsedTime = 0.0f;
@@ -76,34 +76,33 @@ void game()
 
     while (!WindowShouldClose())
     {
-        
+
         UpdateCamera(&camera, cameraMode);
 
         BeginDrawing();
 
         //Display timer
         elapsedTime += GetFrameTime();
-        if (elapsedTime >= updateInterval) 
-        {
-            // Check timer's values
-            if (seconds == 0) 
-            {
+
+        if (elapsedTime >= updateInterval) {
+            // Decrement the timer
+            if (seconds == 0) {
                 if (minutes == 0)
                 {
-
                     gameLost();
-                    minutes--;
-                    seconds = 59;
-                    break;
                 }
+                minutes--;
+                seconds = 59;
+               
             }
-
-            else 
-            {
+            else {
                 seconds--;
             }
-            elapsedTime = 0.0f;
+
+            elapsedTime = 0.0f; // Reset elapsed time
         }
+
+ 
 
         ClearBackground(RAYWHITE);
 
