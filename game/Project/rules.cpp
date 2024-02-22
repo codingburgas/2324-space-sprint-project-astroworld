@@ -4,6 +4,7 @@
 void story() {
     SetExitKey(KEY_ESCAPE);
     Texture2D astroPhoto = LoadTexture("../images/astronaut.png");
+
     while (!WindowShouldClose())
     {
         Vector2 mousePosition = GetMousePosition();
@@ -37,30 +38,38 @@ void controls() {
     {
         Vector2 mousePosition = GetMousePosition();
         BeginDrawing();
-        ClearBackground(RED);
+        ClearBackground({ 0, 1, 41, 255 });
         DrawText("press ESC to go back", 75, 915, 20, RAYWHITE);
-        DrawRectangleLines(530, 200, 800, 500, ORANGE);
-        DrawFPS(75, 50);
-        DrawText("W - move forward", 700, 255, 50, WHITE);
-        DrawText("A - move to the left", 700, 365, 50, WHITE);
-        DrawText("S - move backwards", 700, 475, 50, WHITE);
-        DrawText("D - move to the right", 700, 585, 50, WHITE);
+        DrawRectangleLines(530, 200, 800, 500, { 0, 91, 241, 255 });
+        DrawText("W - move forward", 680, 255, 50, WHITE);
+        DrawText("A - move to the left", 680, 365, 50, WHITE);
+        DrawText("S - move backwards", 680, 475, 50, WHITE);
+        DrawText("D - move to the right", 680, 585, 50, WHITE);
         EndDrawing();
     }
 }
 void rules()
 {
-    const Rectangle storyButton = { (GetScreenWidth() / 2) - 110, (GetScreenHeight() / 2) - 240, 270, 100 };
-    const Rectangle controlsButton = { (GetScreenWidth() / 2) - 110, (GetScreenHeight() / 2) - 70, 270, 100 };
+    Texture2D alien = LoadTexture("../images/alien.png");
+    Texture2D constellation = LoadTexture("../images/constellation.png");
+    Texture2D star = LoadTexture("../images/star.png");
+
+    const Rectangle storyButton = { (GetScreenWidth() / 2) - 110, (GetScreenHeight() / 2) - 120, 270, 100 };
+    const Rectangle controlsButton = { (GetScreenWidth() / 2) - 110, (GetScreenHeight() / 2) - (-15), 270, 100 };
     SetExitKey(KEY_ESCAPE);
     while (!WindowShouldClose())
     {
         Vector2 mousePosition = GetMousePosition();
         BeginDrawing();
-        ClearBackground(RAYWHITE);
+
+        ClearBackground({ 0, 1, 41, 255 });
+        DrawTexture(alien, 110, 400, RAYWHITE);
+        DrawTexture(constellation, 1360, 250, RAYWHITE);
+        DrawTexture(star, 640, 50, RAYWHITE);
+
         bool isMouseOverStoryButton = CheckCollisionPointRec(mousePosition, storyButton);
         DrawRectangleRec(storyButton, (isMouseOverStoryButton ? SKYBLUE : BLUE));
-        DrawText("Story", GetScreenWidth() / 2 - 55, GetScreenHeight() / 2 - 215, 50, BLACK);
+        DrawText("Story", GetScreenWidth() / 2 - 45, GetScreenHeight() / 2 - 97, 50, WHITE);
 
         if (isMouseOverStoryButton && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
             story();
@@ -68,7 +77,7 @@ void rules()
 
         bool isMouseOverControls = CheckCollisionPointRec(mousePosition, controlsButton);
         DrawRectangleRec(controlsButton, (isMouseOverControls ? GREEN : LIME));
-        DrawText("Controls", GetScreenWidth() / 2 - 90, (GetScreenHeight() / 2) - 45, 50, BLACK);
+        DrawText("Controls", GetScreenWidth() / 2 - 80, (GetScreenHeight() / 2) - (-40), 50, WHITE);
 
         if (isMouseOverControls && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
             controls();
