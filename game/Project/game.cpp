@@ -1,14 +1,53 @@
 #include "game.h"
 #include "gameLost.h"
+#include "rules.h"
+
+#include <vector>
 
 #define ROCKS 200
+
+// Structure for spacecraft parts
+struct SpacecraftPart {
+    Model obj;
+    Texture2D texture;
+    Vector3 position;
+    float scale;
+    bool visible;
+};
+
+bool CheckCollisionPlayerPart(Vector3 playerPos, Vector3 partPos, float partScale)
+{
+
+    Vector3 partSize = { 10.0f * partScale, 10.0f * partScale, 10.0f * partScale };
+
+
+    Vector3 playerHalfExtents = { 0.5f, 0.5f, 0.5f };
+    Vector3 partHalfExtents = { partSize.x * 0.5f, partSize.y * 0.5f, partSize.z * 0.5f };
+
+
+    Vector3 distVec = { playerPos.x - partPos.x, playerPos.y - partPos.y, playerPos.z - partPos.z };
+    Vector3 minDist = { fabs(distVec.x), fabs(distVec.y), fabs(distVec.z) };
+
+
+    if (minDist.x <= (playerHalfExtents.x + partHalfExtents.x) &&
+        minDist.y <= (playerHalfExtents.y + partHalfExtents.y) &&
+        minDist.z <= (playerHalfExtents.z + partHalfExtents.z))
+    {
+
+        return true;
+    }
+
+
+    return false;
+}
+
 void game()
 {
-    //Screen's size
+    // Screen's size
     const int screenWidth = 1920;
     const int screenHeight = 975;
 
-    //Game's background
+
     Texture2D bgPhoto = LoadTexture("../images/bgPhoto.png");
 
     // Timer's parameters
@@ -17,46 +56,27 @@ void game()
 
     // Update timer every second
     float elapsedTime = 0.0f;
-    float updateInterval = 1.0f; 
+    float updateInterval = 1.0f;
 
-    //Objects
+    // Objects
     float heights[ROCKS] = { 0 };
     Vector3 rockPositions[ROCKS] = { 0 };
 
+    // Spacecraft parts
+    vector<SpacecraftPart> parts;
 
-    //First spacecraft part object
-    Rectangle firstPartForm = { 100, 100, 200, 100 };
-    
-    Model firstPartobj = LoadModel("../images/spacecraft/objects/firstPart.obj");
-    Texture2D firstPartTexture = LoadTexture("..images/spacecraft/firstPart.png");
-    Vector3 positionOne = { 102.5f,2.0f,9.8f };
+    // Load spacecraft parts
+    SpacecraftPart firstPart;
+    firstPart.obj = LoadModel("../images/spacecraft/objects/firstPart.obj");
+    firstPart.texture = LoadTexture("../images/spacecraft/firstPart.png");
+    firstPart.position = { 102.5f,2.0f,9.8f };
+    firstPart.scale = 0.05f;
+    firstPart.visible = true;
+    parts.push_back(firstPart);
 
-    //Second spacecraft part object
-    Model secondPartobj = LoadModel("../images/spacecraft/objects/secondPart.obj");
-    Texture2D secondPartTexture = LoadTexture("..images/spacecraft/secondPart.png");
-    Vector3 positionTwo = { -120.0f,1.0f,-60.7f };
+    // Load other spacecraft parts similarly
 
-    //Third spacecraft part object 
-    Model thirdPartobj = LoadModel("../images/spacecraft/objects/thirdPart.obj");
-    Texture2D thirdPartTexture = LoadTexture("..images/spacecraft/thirdPart.png");
-    Vector3 positionThree = { -70.0f,1.0f,80.9f };
-
-    //Fourth spacecraft part object
-    Model fourthPartobj = LoadModel("../images/spacecraft/objects/fourthPart.obj");
-    Texture2D fourthPartTexture = LoadTexture("..images/spacecraft/fourthPart.png");
-    Vector3 positionFour = { 10.6f,2.0f,-100.4f };
-
-    //Fifth spacecraft part object
-    Model fifthPartobj = LoadModel("../images/spacecraft/objects/fifthPart.obj");
-    Texture2D fifthPartTexture = LoadTexture("..images/spacecraft/fifthPart.png");
-    Vector3 positionFive = { 90.0f,1.0f,80.0f };
-
-    //Sixth spacecraft part object
-    Model sixthPartobj = LoadModel("../images/spacecraft/objects/sixthPart.obj");
-    Texture2D sixthPartTexture = LoadTexture("..images/spacecraft/sixthPart.png");
-    Vector3 positionSix = { 95.6f,1.0f,-120.0f };
-
-    //Variables for the camera
+    // Variables for the camera
     Camera camera = { 0 };
     camera.position = { 0.0f, 2.0f, 4.0f };
     camera.target = { 0.0f, 2.0f, 0.0f };
@@ -65,7 +85,7 @@ void game()
     camera.projection = CAMERA_PERSPECTIVE;
     int cameraMode = CAMERA_FIRST_PERSON;
 
-    //Defines rocks' positions
+    // Defines rocks' positions
     for (int i = 0; i < ROCKS; i++)
     {
         heights[i] = (float)GetRandomValue(0.9, 1.0);
@@ -76,12 +96,11 @@ void game()
 
     while (!WindowShouldClose())
     {
-
         UpdateCamera(&camera, cameraMode);
 
         BeginDrawing();
 
-        //Display timer
+        // Display timer
         elapsedTime += GetFrameTime();
 
         if (elapsedTime >= updateInterval) {
@@ -93,7 +112,7 @@ void game()
                 }
                 minutes--;
                 seconds = 59;
-               
+
             }
             else {
                 seconds--;
@@ -102,34 +121,51 @@ void game()
             elapsedTime = 0.0f; // Reset elapsed time
         }
 
- 
-
         ClearBackground(RAYWHITE);
 
         DrawTexture(bgPhoto, 0, 0, WHITE);
 
-        //Draw timer
+        // Draw timer
         DrawText(TextFormat("%02d:%02d", minutes, seconds), 930, 40, 50, RED);
 
         BeginMode3D(camera);
 
-        //Draw ground
+        // Draw ground
         DrawPlane({ 0.0f, 0.0f, 0.0f }, { 250.0f, 250.0f }, { 192, 96, 0, 250 });
 
+        // Draw rocks
         for (int i = 0; i < ROCKS; i++)
         {
             DrawCube(rockPositions[i], 1.5f, { 0.9f }, 1.5f, { 138, 69, 0, 250 });
         }
-        DrawModel(firstPartobj, positionOne, 0.05f, RED);
-        DrawModel(secondPartobj, positionTwo, 0.05f, WHITE);
-        DrawModel(thirdPartobj, positionThree, 0.05f, WHITE);
-        DrawModel(fourthPartobj, positionFour, 0.05f, RED);
-        DrawModel(fifthPartobj, positionFive, 0.05f, WHITE);
-        DrawModel(sixthPartobj, positionSix, 0.05f, WHITE);
+
+        // Draw spacecraft parts
+        for (auto& part : parts)
+        {
+            if (part.visible)
+            {
+                DrawModel(part.obj, part.position, part.scale, WHITE);
+                
+            }
+        }
+
+        // Check collision between player and each spacecraft part
+        for (auto& part : parts)
+        {
+            if (part.visible && CheckCollisionPlayerPart(camera.position, part.position, part.scale))
+            {
+                // Collision occurred, handle it here
+                // For example, make the collided part disappear
+                rules();
+                part.visible = false;
+            }
+        }
+
         EndMode3D();
 
         EndDrawing();
     }
+
     SetExitKey(KEY_ESCAPE);
     EnableCursor();
 }
