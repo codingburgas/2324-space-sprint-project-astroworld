@@ -1,5 +1,6 @@
 ﻿D:\School\Visual Studio\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Project.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   game.cpp
-D:\School\2324-space-sprint-project-astroworld\game\Project\game.cpp(91,49): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-D:\School\2324-space-sprint-project-astroworld\game\Project\game.cpp(91,44): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+D:\School\2324-space-sprint-project-astroworld\game\Project\game.cpp(17,16): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+D:\School\2324-space-sprint-project-astroworld\game\Project\game.cpp(133,49): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+D:\School\2324-space-sprint-project-astroworld\game\Project\game.cpp(133,44): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   Project.vcxproj -> D:\School\2324-space-sprint-project-astroworld\game\x64\Debug\ASTROWORLD.exe

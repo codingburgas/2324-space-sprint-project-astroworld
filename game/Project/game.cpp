@@ -1,9 +1,6 @@
 #include "game.h"
-#include "gameLost.h"
 #include "rules.h"
-
-#include <vector>
-
+#include "gameLost.h"
 #define ROCKS 200
 
 // Structure for spacecraft parts
@@ -15,29 +12,35 @@ struct SpacecraftPart {
     bool visible;
 };
 
+float Vector3Distance(Vector3 v1, Vector3 v2)
+{
+    return sqrt(pow(v2.x - v1.x, 2) + pow(v2.y - v1.y, 2) + pow(v2.z - v1.z, 2));
+}
+
+// Check collision between player and spacecraft part
 bool CheckCollisionPlayerPart(Vector3 playerPos, Vector3 partPos, float partScale)
 {
-
+    // Adjust bounding box for the spacecraft parts
     Vector3 partSize = { 10.0f * partScale, 10.0f * partScale, 10.0f * partScale };
 
-
+    // Calculate half extents for player and part bounding boxes
     Vector3 playerHalfExtents = { 0.5f, 0.5f, 0.5f };
     Vector3 partHalfExtents = { partSize.x * 0.5f, partSize.y * 0.5f, partSize.z * 0.5f };
 
-
+    // Calculate the distance between player and part
     Vector3 distVec = { playerPos.x - partPos.x, playerPos.y - partPos.y, playerPos.z - partPos.z };
     Vector3 minDist = { fabs(distVec.x), fabs(distVec.y), fabs(distVec.z) };
 
-
+    // Check if the distance is less than the sum of the half extents
     if (minDist.x <= (playerHalfExtents.x + partHalfExtents.x) &&
         minDist.y <= (playerHalfExtents.y + partHalfExtents.y) &&
         minDist.z <= (playerHalfExtents.z + partHalfExtents.z))
     {
-
+        // Collision detected
         return true;
     }
 
-
+    // No collision
     return false;
 }
 
@@ -47,7 +50,7 @@ void game()
     const int screenWidth = 1920;
     const int screenHeight = 975;
 
-
+    // Game's background
     Texture2D bgPhoto = LoadTexture("../images/bgPhoto.png");
 
     // Timer's parameters
@@ -69,12 +72,51 @@ void game()
     SpacecraftPart firstPart;
     firstPart.obj = LoadModel("../images/spacecraft/objects/firstPart.obj");
     firstPart.texture = LoadTexture("../images/spacecraft/firstPart.png");
-    firstPart.position = { 102.5f,2.0f,9.8f };
+    firstPart.position = { 102.5f, 2.0f, 9.8f }; // Initial coordinates
     firstPart.scale = 0.05f;
-    firstPart.visible = true;
+    firstPart.visible = true; // Ensure it's visible initially
     parts.push_back(firstPart);
 
-    // Load other spacecraft parts similarly
+    SpacecraftPart secondPart;
+    secondPart.obj = LoadModel("../images/spacecraft/objects/secondPart.obj");
+    secondPart.texture = LoadTexture("../images/spacecraft/secondPart.png");
+    secondPart.position = { -120.0f, 1.0f, -60.7f };
+    secondPart.scale = 0.05f;
+    secondPart.visible = true; // Ensure it's visible initially
+    parts.push_back(secondPart);
+
+    SpacecraftPart thirdPart;
+    thirdPart.obj = LoadModel("../images/spacecraft/objects/thirdPart.obj");
+    thirdPart.texture = LoadTexture("../images/spacecraft/thirdPart.png");
+    thirdPart.position = { -70.0f, 1.0f, 80.9f };
+    thirdPart.scale = 0.05f;
+    thirdPart.visible = true; // Ensure it's visible initially
+    parts.push_back(thirdPart);
+
+    SpacecraftPart fourthPart;
+    fourthPart.obj = LoadModel("../images/spacecraft/objects/fourthPart.obj");
+    fourthPart.texture = LoadTexture("../images/spacecraft/fourthPart.png");
+    fourthPart.position = { 10.6f, 2.0f, -100.4f };
+    fourthPart.scale = 0.05f;
+    fourthPart.visible = true; // Ensure it's visible initially
+    parts.push_back(fourthPart);
+
+    SpacecraftPart fifthPart;
+    fifthPart.obj = LoadModel("../images/spacecraft/objects/fifthPart.obj");
+    fifthPart.texture = LoadTexture("../images/spacecraft/fifthPart.png");
+    fifthPart.position = { 90.0f, 1.0f, 80.0f };
+    fifthPart.scale = 0.05f;
+    fifthPart.visible = true; // Ensure it's visible initially
+    parts.push_back(fifthPart);
+
+    SpacecraftPart sixthPart;
+    sixthPart.obj = LoadModel("../images/spacecraft/objects/sixthPart.obj");
+    sixthPart.texture = LoadTexture("../images/spacecraft/sixthPart.png");
+    sixthPart.position = { 95.6f, 1.0f, -120.0f };
+    sixthPart.scale = 0.05f;
+    sixthPart.visible = true; // Ensure it's visible initially
+    parts.push_back(sixthPart);
+
 
     // Variables for the camera
     Camera camera = { 0 };
@@ -125,9 +167,6 @@ void game()
 
         DrawTexture(bgPhoto, 0, 0, WHITE);
 
-        // Draw timer
-        DrawText(TextFormat("%02d:%02d", minutes, seconds), 930, 40, 50, RED);
-
         BeginMode3D(camera);
 
         // Draw ground
@@ -145,23 +184,33 @@ void game()
             if (part.visible)
             {
                 DrawModel(part.obj, part.position, part.scale, WHITE);
-                
             }
         }
 
-        // Check collision between player and each spacecraft part
         for (auto& part : parts)
         {
-            if (part.visible && CheckCollisionPlayerPart(camera.position, part.position, part.scale))
+            if (part.visible)
             {
-                // Collision occurred, handle it here
-                // For example, make the collided part disappear
-                rules();
-                part.visible = false;
+                // Calculate the distance between player and part
+                float distance = Vector3Distance(camera.position, part.position);
+
+                // Define a threshold for collision
+                float collisionThreshold = 2.0f; // Adjust as needed
+
+                // Check if the distance is less than the collision threshold
+                if (distance < collisionThreshold)
+                {
+                    // Collision occurred, make the part disappear
+                    rules();
+                    part.visible = false;
+                }
             }
         }
 
         EndMode3D();
+
+        // Draw timer
+        DrawText(TextFormat("%02d:%02d", minutes, seconds), 930, 40, 50, RED);
 
         EndDrawing();
     }
