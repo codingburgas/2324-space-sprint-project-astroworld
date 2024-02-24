@@ -43,7 +43,7 @@ void questions() {
 	char name[20] = "\0";
 	int letterCount = 0;
 
-	Rectangle textBox = { GetScreenWidth() / 2 - 150, 500, 350, 100 };
+	Rectangle textBox = { GetScreenWidth() / 2 - 100, 500, 340, 100 };
 	bool mouseOnText = false;
 
 	int framesCounter = 0;
@@ -57,6 +57,7 @@ void questions() {
 
     string currentQuestion = questionsArr[GetRandomValue(0, 17)];
  
+    Texture2D thinkingAlien = LoadTexture("../images/thinkingAlien.png");
 
 
     EnableCursor();
@@ -111,15 +112,16 @@ void questions() {
             }
         }*/
         BeginDrawing();
-        ClearBackground(RAYWHITE);
+        ClearBackground({ 0, 1, 41, 255 });
+        DrawTexture(thinkingAlien, 1400, 400, RAYWHITE);
 
-        DrawText(currentQuestion.c_str(), (float)GetScreenWidth() / 2 - MeasureText(currentQuestion.c_str(), 40) / 2 - 110, (float)GetScreenHeight() / 2 - 100, 30, GREEN);
+        DrawText(currentQuestion.c_str(), (float)GetScreenWidth() / 2 - MeasureText(currentQuestion.c_str(), 40) / 2 - 100, (float)GetScreenHeight() / 2 - 200, 40, WHITE);
        
-        DrawRectangleRec(textBox, GREEN);
-        if (mouseOnText) DrawRectangleLines((int)textBox.x, (int)textBox.y, (int)textBox.width, (int)textBox.height, RED);
-        else DrawRectangleLines((int)textBox.x, (int)textBox.y, (int)textBox.width, (int)textBox.height, DARKGRAY);
+        DrawRectangleRec(textBox, RAYWHITE);
+        if (mouseOnText) DrawRectangleLines((int)textBox.x, (int)textBox.y, (int)textBox.width, (int)textBox.height, { 0, 91, 241, 255 });
+        else DrawRectangleLines((int)textBox.x, (int)textBox.y, (int)textBox.width, (int)textBox.height, { 0, 91, 241, 255 });
 
-        DrawText(name, (int)textBox.x + 5, (int)textBox.y + 8, 40, MAROON);
+        DrawText(name, (int)textBox.x + 5, (int)textBox.y + 8, 40, GREEN);
        
         EndDrawing();
     }
