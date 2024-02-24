@@ -135,14 +135,17 @@
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="questions.cpp" />
     <ClCompile Include="rules.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h" />
     <ClInclude Include="gameLost.h" />
+    <ClInclude Include="questions.h" />
     <ClInclude Include="rules.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="variables.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

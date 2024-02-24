@@ -1,6 +1,7 @@
 #include "game.h"
 #include "rules.h"
 #include "gameLost.h"
+#include "questions.h"
 #define ROCKS 200
 
 // Structure for spacecraft parts
@@ -201,7 +202,8 @@ void game()
                 if (distance < collisionThreshold)
                 {
                     // Collision occurred, make the part disappear
-                    rules();
+                    EndMode3D();
+                    questions();
                     part.visible = false;
                 }
             }

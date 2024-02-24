@@ -1,6 +1,7 @@
 #include "menu.h"
 #include "game.h"
 #include "rules.h"
+#include "questions.h"
 void mainMenu()
 {
     const int screenWidth = 1920;
