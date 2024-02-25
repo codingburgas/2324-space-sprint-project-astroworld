@@ -5,6 +5,7 @@
 
 #define ROCKS 200
 bool answer;
+int collectedParts = 0;
 
 // Structure for spacecraft parts
 struct SpacecraftPart {
@@ -208,6 +209,7 @@ void game()
                     questions();
                     if (answer) {
                         part.visible = false;
+                        collectedParts++;
                     }
                     else {
                         part.visible = true;
@@ -217,9 +219,10 @@ void game()
         }
 
         EndMode3D();
-
         // Draw timer
         DrawText(TextFormat("%02d:%02d", minutes, seconds), 930, 40, 50, RED);
+        DrawText(TextFormat("%01d", collectedParts), 1700, 40, 50, WHITE);
+        DrawText("/6", 1730, 40, 50, WHITE);
 
         EndDrawing();
     }

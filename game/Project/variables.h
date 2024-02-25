@@ -6,12 +6,12 @@ extern string questionsArr[18] = { "How many constellations are there? \n a. 88 
 	"How long does each season last on Neptune? \n a. 3 months \n b. 30 weeks \n c. more than 40 years",
 	"How many minutes was the shortest space flight? \n a. 1 hour \n b. 15 minutes \n c. 3 days",
 	"What is the only planet not named after a God? \n a. Earth \n b. Mars \n c. Venus",
-	"The first manned space mission to land on the Moon was called what? \n a. Apollo 17 \n b. Apollo 14 \n c. Apollo 11",
+	"How was the first manned space mission to land on the Moon called? \n a. Apollo 17 \n b. Apollo 14 \n c. Apollo 11",
 	"What planet is nicknamed the 'Red Planet'? \n a. Mars \n b. Saturn \n c. Mercury",
 	"How long does it take to get to the moon from Earth in a space shuttle? \n a. 3 days \n b. 1 hour \n c. 5 hours",
 	"Which constellation takes its name from the Latin word for 'twins'? \n a. Libra \n b. Gemini \n c. Cancer",
 	"How many space shuttles actually flew in space? \n a. Three \n b. Eighteen \n c. Five",
-	"Neptune has the fastest winds of any solar system planet what speeds do they reach? \n a. 1,000 mph \n b. 1,300 mph \n c. 6,500 mph",
+	"Neptune has the fastest winds of any planet, what speeds do they reach? \n a. 1,000 mph \n b. 1,300 mph \n c. 6,500 mph",
 	"Which constellation holds the hottest place in the universe? \n a. Virgo \n b. Orion \n c. Draco",
 	"Apollo 11 landed in which ocean upon completion of their moon landing mission? \n a. Atlantic \n b. Arctic \n c. North Pacific ",
 	"How long does it take for Venus to rotate once on its axis (in earth days)? \n a. 365 \n b. 224 \n c. 12",
@@ -42,7 +42,7 @@ extern char answers[18] = {
 	'a',
 };
 
-extern int questionsLength = 18;
+extern int questionsLength = 15;
 
 extern bool isAnswerTrue = false;
 
