@@ -2,6 +2,7 @@
 #include "rules.h"
 #include "gameLost.h"
 #include "questions.h"
+
 #define ROCKS 200
 
 // Structure for spacecraft parts
@@ -205,6 +206,8 @@ void game()
                     EndMode3D();
                     questions();
                     part.visible = false;
+                    
+                    
                 }
             }
         }
