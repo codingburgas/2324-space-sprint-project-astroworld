@@ -1,6 +1,8 @@
 #include "questions.h"
 #include "variables.h"
+#include "game.h"
 
+extern bool answer;
 
 void removeQuestion()
 {
@@ -71,7 +73,6 @@ void questions() {
     EnableCursor();
     while (!WindowShouldClose())
     {
-
         Vector2 mousePoint = GetMousePosition();
         if (CheckCollisionPointRec(mousePoint, textBox)) mouseOnText = true;
         else mouseOnText = false;
@@ -132,15 +133,15 @@ void questions() {
                     )
                 {
                     trueAnswer();
+                    DisableCursor();
+                    answer = true;
                 }
                 else {
                     wrongAnswer();
+                    DisableCursor();
+                    answer = false;
                 }
-
             }
-
-
-
         }
 
         BeginDrawing();

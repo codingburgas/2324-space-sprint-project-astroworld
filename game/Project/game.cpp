@@ -4,6 +4,7 @@
 #include "questions.h"
 
 #define ROCKS 200
+bool answer;
 
 // Structure for spacecraft parts
 struct SpacecraftPart {
@@ -205,9 +206,12 @@ void game()
                     // Collision occurred, make the part disappear
                     EndMode3D();
                     questions();
-                    part.visible = false;
-                    
-                    
+                    if (answer) {
+                        part.visible = false;
+                    }
+                    else {
+                        part.visible = true;
+                    }
                 }
             }
         }
