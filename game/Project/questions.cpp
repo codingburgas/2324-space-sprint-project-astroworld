@@ -113,7 +113,7 @@ void questions() {
             {
                 if (currentQuestion == "How many constellations are there? \n \n a. 88 \n b. 39 \n c. 120" && name[i] == 'a' ||
                     currentQuestion == "How long does each season last on Neptune? \n \n a. 3 months \n b. 30 weeks \n c. more than 40 years" && name[i] == 'c' ||
-                    currentQuestion == "How many minutes was the shortest space flight? \n \n a. 120 minutes \n b. 15 minutes \n c. 3 minutes" && name[i] == 'b' ||
+                    currentQuestion == "How many minutes was the shortest space flight? \n \n a. 60 minutes \n b. 15 minutes \n c. 3 minutes" && name[i] == 'b' ||
                     currentQuestion == "What is the only planet not named after a God? \n \n a. Earth \n b. Mars \n c. Venus" && name[i] == 'a' ||
                     currentQuestion == "How was the first manned space mission to land on the Moon called? \n \n a. Apollo 17 \n b. Apollo 14 \n c. Apollo 11" && name[i] == 'c' ||
                     currentQuestion == "What planet is nicknamed the 'Red Planet'? \n \n a. Mars \n b. Saturn \n c. Mercury" && name[i] == 'a' ||

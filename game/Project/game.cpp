@@ -2,6 +2,7 @@
 #include "rules.h"
 #include "gameLost.h"
 #include "questions.h"
+#include "gameWon.h"
 
 #define ROCKS 200
 bool answer;
@@ -207,12 +208,18 @@ void game()
                     // Collision occurred, make the part disappear
                     EndMode3D();
                     questions();
-                    if (answer) {
+                    if (answer) 
+                    {
                         part.visible = false;
                         collectedParts++;
                     }
-                    else {
+                    else 
+                    {
                         part.visible = true;
+                    }
+                    if (collectedParts == 6)
+                    {
+                        gameWon();
                     }
                 }
             }

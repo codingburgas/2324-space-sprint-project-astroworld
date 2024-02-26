@@ -132,6 +132,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="gameLost.cpp" />
+    <ClCompile Include="gameWon.cpp" />
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="game.cpp" />
@@ -141,6 +142,7 @@
   <ItemGroup>
     <ClInclude Include="game.h" />
     <ClInclude Include="gameLost.h" />
+    <ClInclude Include="gameWon.h" />
     <ClInclude Include="questions.h" />
     <ClInclude Include="rules.h" />
     <ClInclude Include="menu.h" />
