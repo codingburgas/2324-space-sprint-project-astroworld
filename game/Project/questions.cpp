@@ -2,25 +2,6 @@
 #include "variables.h"
 #include "game.h"
 
-extern bool answer;
-
-void removeQuestion()
-{
-	for (int i = 0; i < 24; i++)
-	{
-		if (questionsArr[i] == currentQuestion)
-		{
-			questionsLength -= 1;
-			for (int j = i; j < questionsLength; j++)
-			{
-				questionsArr[j] = questionsArr[j + 1];
-				answers[j] = answers[j + 1];
-			}
-
-		}
-	}
-}
-
 void trueAnswer() {
     SetExitKey(KEY_ESCAPE);
     while (!WindowShouldClose())

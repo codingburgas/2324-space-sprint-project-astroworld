@@ -49,3 +49,5 @@ extern int questionsLength = 18;
 extern bool isAnswerTrue = false; //Declare a boolean
 
 extern string currentQuestion = ""; //Declare current question variable
+
+extern bool answer;

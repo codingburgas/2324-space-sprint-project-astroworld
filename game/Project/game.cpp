@@ -150,25 +150,7 @@ void game()
         BeginDrawing();
 
         // Display timer
-        elapsedTime += GetFrameTime();
-
-        if (elapsedTime >= updateInterval) {
-            // Decrement the timer
-            if (seconds == 0) {
-                if (minutes == 0)
-                {
-                    gameLost();
-                }
-                minutes--;
-                seconds = 59;
-
-            }
-            else {
-                seconds--;
-            }
-
-            elapsedTime = 0.0f; // Reset elapsed time
-        }
+       
 
         ClearBackground(RAYWHITE);
 
@@ -220,12 +202,37 @@ void game()
                     {
                         part.visible = true; //Parts don't disappear
                     }
-                    if (collectedParts == 1)
+                    if (collectedParts == 6)
                     {
-                        gameWon(); //End game 
+                        EndMode3D();
+                        collectedParts = 0;
+                        gameWon(); //End game
+                        
                     }
                 }
             }
+        }
+
+        elapsedTime += GetFrameTime();
+
+        if (elapsedTime >= updateInterval) {
+            // Decrement the timer
+            if (seconds == 0) {
+                if (minutes == 0)
+                {
+                    EndMode3D();
+                    collectedParts = 0;
+                    gameLost();
+                }
+                minutes--;
+                seconds = 59;
+
+            }
+            else {
+                seconds--;
+            }
+
+            elapsedTime = 0.0f; // Reset elapsed time
         }
 
         EndMode3D();

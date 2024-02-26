@@ -1,11 +1,13 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Project.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  gameWon.cpp
-C:\Users\Asus\Documents\AW\2324-space-sprint-project-astroworld\game\Project\gameWon.cpp(15,47): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\Asus\Documents\AW\2324-space-sprint-project-astroworld\game\Project\gameWon.cpp(15,47): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\Asus\Documents\AW\2324-space-sprint-project-astroworld\game\Project\gameWon.cpp(15,76): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\Asus\Documents\AW\2324-space-sprint-project-astroworld\game\Project\gameWon.cpp(15,76): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\Asus\Documents\AW\2324-space-sprint-project-astroworld\game\Project\gameWon.cpp(16,48): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\Asus\Documents\AW\2324-space-sprint-project-astroworld\game\Project\gameWon.cpp(16,48): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\Asus\Documents\AW\2324-space-sprint-project-astroworld\game\Project\gameWon.cpp(16,77): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\Asus\Documents\AW\2324-space-sprint-project-astroworld\game\Project\gameWon.cpp(16,77): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-  Project.vcxproj -> C:\Users\Asus\Documents\AW\2324-space-sprint-project-astroworld\game\x64\Debug\ASTROWORLD.exe
+  questions.cpp
+C:\Users\user\OneDrive - ПГКПИ - Бургас\Desktop\ASTRO\2324-space-sprint-project-astroworld\game\Project\questions.cpp(37,48): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\user\OneDrive - ПГКПИ - Бургас\Desktop\ASTRO\2324-space-sprint-project-astroworld\game\Project\questions.cpp(37,48): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\user\OneDrive - ПГКПИ - Бургас\Desktop\ASTRO\2324-space-sprint-project-astroworld\game\Project\questions.cpp(37,76): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\user\OneDrive - ПГКПИ - Бургас\Desktop\ASTRO\2324-space-sprint-project-astroworld\game\Project\questions.cpp(37,76): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\user\OneDrive - ПГКПИ - Бургас\Desktop\ASTRO\2324-space-sprint-project-astroworld\game\Project\questions.cpp(42,50): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\user\OneDrive - ПГКПИ - Бургас\Desktop\ASTRO\2324-space-sprint-project-astroworld\game\Project\questions.cpp(42,50): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\user\OneDrive - ПГКПИ - Бургас\Desktop\ASTRO\2324-space-sprint-project-astroworld\game\Project\questions.cpp(42,79): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\user\OneDrive - ПГКПИ - Бургас\Desktop\ASTRO\2324-space-sprint-project-astroworld\game\Project\questions.cpp(42,79): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\user\OneDrive - ПГКПИ - Бургас\Desktop\ASTRO\2324-space-sprint-project-astroworld\game\Project\questions.cpp(131,153): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\user\OneDrive - ПГКПИ - Бургас\Desktop\ASTRO\2324-space-sprint-project-astroworld\game\Project\questions.cpp(131,118): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Project.vcxproj -> C:\Users\user\OneDrive - ПГКПИ - Бургас\Desktop\ASTRO\2324-space-sprint-project-astroworld\game\x64\Debug\ASTROWORLD.exe
