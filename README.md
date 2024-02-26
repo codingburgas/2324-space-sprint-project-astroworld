@@ -45,7 +45,7 @@ This is a game about an astronaut from the planet ,,Earth” , but on his last e
   <a href="https://www.microsoft.com/en-us/microsoft-365/powerpoint"><img src="https://img.icons8.com/fluency/48/000000/microsoft-powerpoint-2019.png" alt="MS PowerPoint logo" width=48px />
   <a href="https://git-scm.com/"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" heigh=48px width=48px/></a>
  <a href="https://www.canva.com/help/transparent-background/"><img src="https://www.edigitalagency.com.au/wp-content/uploads/Canva-logo-png-circle-full-colour-white-font.png" alt="Canva logo"  width=48px/></a>
- <a href="https://teams.microsoft.com/_?culture=en-us&country=us#/conversations/19:b01cf915e57b430ea93ab780c4f6b6dc@thread.v2?ctx=chat"><img src="https://banner2.cleanpng.com/20190506/rpw/kisspng-microsoft-teams-office-365-microsoft-office-micros-5cd0b190d544c1.3545819815571808168736.jpg" alt="Teams logo" width=48px/></a><br>
+ <a href="https://teams.microsoft.com/_?culture=en-us&country=us#/conversations/19:b01cf915e57b430ea93ab780c4f6b6dc@thread.v2?ctx=chat"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Microsoft_Office_Teams_%282018%E2%80%93present%29.svg/2203px-Microsoft_Office_Teams_%282018%E2%80%93present%29.svg.png" alt="Teams logo" width=48px/></a><br>
 
 <h1 align="center"> 🚀 Languages and Libraries</h1>
 <p align="center">
