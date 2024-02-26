@@ -50,12 +50,12 @@ void questions() {
     char name[20] = "\0";
     int letterCount = 0;
 
-    Rectangle textBox = { GetScreenWidth() / 2 - 100, 500, 340, 100 };
+    Rectangle textBox = { GetScreenWidth() / 2 - 10, GetScreenHeight() / 2 + 120, 340, 100 };
     bool mouseOnText = false;
 
     int framesCounter = 0;
 
-    Rectangle submitRec = { GetScreenWidth() / 2 - 115, 600, 210, 100 };
+    Rectangle submitRec = { GetScreenWidth() / 2 + 120, GetScreenHeight() / 2 + 240, 210, 70 };
 
     const int screenWidth = 1000;
     const int screenHeight = 1000;
@@ -65,10 +65,6 @@ void questions() {
     string currentQuestion = questionsArr[GetRandomValue(0, 17)];
 
     Texture2D thinkingAlien = LoadTexture("../images/thinkingAlien.png");
-
-    /*const Rectangle firstButton = { (screenWidth / 2) - 300, (screenHeight / 2) - 150, 270, 90 };
-    const Rectangle secondButton = { (screenWidth / 2) + 10, (screenHeight / 2) - 150, 270, 90 };
-    const Rectangle thirdButton = { (screenWidth / 2) + 310, (screenHeight / 2) - 150, 270, 90 }*/
 
     EnableCursor();
     while (!WindowShouldClose())
@@ -112,24 +108,24 @@ void questions() {
         {
             for (int i = 0; i < letterCount; i++)
             {
-                if (currentQuestion == "How many constellations are there? \n a. 88 \n b. 39 \n c. 120" && name[i] == 'a' ||
-                    currentQuestion == "How long does each season last on Neptune? \n a. 3 months \n b. 30 weeks \n c. more than 40 years" && name[i] == 'c' ||
-                    currentQuestion == "How many minutes was the shortest space flight? \n a. 120 minutes \n b. 15 minutes \n c. 3 minutes" && name[i] == 'b' ||
-                    currentQuestion == "What is the only planet not named after a God? \n a. Earth \n b. Mars \n c. Venus" && name[i] == 'a' ||
-                    currentQuestion == "How was the first manned space mission to land on the Moon called? \n a. Apollo 17 \n b. Apollo 14 \n c. Apollo 11" && name[i] == 'c' ||
-                    currentQuestion == "What planet is nicknamed the 'Red Planet'? \n a. Mars \n b. Saturn \n c. Mercury" && name[i] == 'a' ||
-                    currentQuestion == "How long does it take to get to the moon from Earth in a space shuttle? \n a. 3 days \n b. 1 hour \n c. 5 hours" && name[i] == 'a' ||
-                    currentQuestion == "Which constellation takes its name from the Latin word for 'twins'? \n a. Libra \n b. Gemini \n c. Cancer" && name[i] == 'b' ||
-                    currentQuestion == "How many space shuttles actually flew in space? \n a. Three \n b. Eighteen \n c. Five" && name[i] == 'c' ||
-                    currentQuestion == "Neptune has the fastest winds of any planet, what speeds do they reach? \n a. 1,000 mph \n b. 1,300 mph \n c. 6,500 mph" && name[i] == 'b' ||
-                    currentQuestion == "Which constellation holds the hottest place in the universe? \n a. Virgo \n b. Orion \n c. Draco" && name[i] == 'a' ||
-                    currentQuestion == "Apollo 11 landed in which ocean upon completion of their moon landing mission? \n a. Atlantic \n b. Arctic \n c. North Pacific" && name[i] == 'c' ||
-                    currentQuestion == "How long does it take for Venus to rotate once on its axis (in earth days)? \n a. 365 \n b. 224 \n c. 12" && name[i] == 'b' ||
-                    currentQuestion == "In which year did man last walk on the Moon? \n a. 1972 \n b. 2001 \n c. 1975" && name[i] == 'a' ||
-                    currentQuestion == "How many ring does Uranus have? \n a. 200 \n b. 13 \n c. 46" && name[i] == 'b' ||
-                    currentQuestion == "How long is Mercury's year? \n a. 88 Earth days \n b. 365 Earth days \n c. 27 Earth days" && name[i] == 'a' ||
-                    currentQuestion == "Who was the first astronaut to walk on the moon? \n a. Charles Duke \n b. Neil Armstrong \n c. Buzz Aldrin" && name[i] == 'b' ||
-                    currentQuestion == "Which planet is name after the King of the Roman gods? \n a. Jupiter \n b. Neptune \n c. Uranus" && name[i] == 'a'
+                if (currentQuestion == "How many constellations are there? \n \n a. 88 \n b. 39 \n c. 120" && name[i] == 'a' ||
+                    currentQuestion == "How long does each season last on Neptune? \n \n a. 3 months \n b. 30 weeks \n c. more than 40 years" && name[i] == 'c' ||
+                    currentQuestion == "How many minutes was the shortest space flight? \n \n a. 120 minutes \n b. 15 minutes \n c. 3 minutes" && name[i] == 'b' ||
+                    currentQuestion == "What is the only planet not named after a God? \n \n a. Earth \n b. Mars \n c. Venus" && name[i] == 'a' ||
+                    currentQuestion == "How was the first manned space mission to land on the Moon called? \n \n a. Apollo 17 \n b. Apollo 14 \n c. Apollo 11" && name[i] == 'c' ||
+                    currentQuestion == "What planet is nicknamed the 'Red Planet'? \n \n a. Mars \n b. Saturn \n c. Mercury" && name[i] == 'a' ||
+                    currentQuestion == "How long does it take to get to the moon from Earth in a space shuttle? \n \n a. 3 days \n b. 1 hour \n c. 5 hours" && name[i] == 'a' ||
+                    currentQuestion == "Which constellation takes its name from the Latin word for 'twins'? \n \n a. Libra \n b. Gemini \n c. Cancer" && name[i] == 'b' ||
+                    currentQuestion == "How many space shuttles actually flew in space? \n \n a. Three \n b. Eighteen \n c. Five" && name[i] == 'c' ||
+                    currentQuestion == "Neptune has the fastest winds of any planet, what speeds do they reach? \n \n a. 1,000 mph \n b. 1,300 mph \n c. 6,500 mph" && name[i] == 'b' ||
+                    currentQuestion == "Which constellation holds the hottest place in the universe? \n \n a. Virgo \n b. Orion \n c. Draco" && name[i] == 'a' ||
+                    currentQuestion == "Apollo 11 landed in which ocean upon completion of their moon landing mission? \n \n a. Atlantic \n b. Arctic \n c. North Pacific" && name[i] == 'c' ||
+                    currentQuestion == "How long does it take for Venus to rotate once on its axis (in earth days)? \n \n a. 365 \n b. 224 \n c. 12" && name[i] == 'b' ||
+                    currentQuestion == "In which year did man last walk on the Moon? \n \n a. 1972 \n b. 2001 \n c. 1975" && name[i] == 'a' ||
+                    currentQuestion == "How many ring does Uranus have? \n \n a. 200 \n b. 13 \n c. 46" && name[i] == 'b' ||
+                    currentQuestion == "How long is Mercury's year? \n \n a. 88 Earth days \n b. 365 Earth days \n c. 27 Earth days" && name[i] == 'a' ||
+                    currentQuestion == "Who was the first astronaut to walk on the moon? \n \n a. Charles Duke \n b. Neil Armstrong \n c. Buzz Aldrin" && name[i] == 'b' ||
+                    currentQuestion == "Which planet is name after the King of the Roman gods? \n \n a. Jupiter \n b. Neptune \n c. Uranus" && name[i] == 'a'
                     )
                 {
                     trueAnswer();
@@ -146,16 +142,18 @@ void questions() {
 
         BeginDrawing();
         ClearBackground({ 0, 1, 41, 255 });
-        DrawTexture(thinkingAlien, 1400, 400, RAYWHITE);
+        DrawTexture(thinkingAlien, 1400, 460, RAYWHITE);
 
-        DrawText(currentQuestion.c_str(), (float)GetScreenWidth() / 2 - MeasureText(currentQuestion.c_str(), 40) / 2 - 100, (float)GetScreenHeight() / 2 - 70, 40, WHITE);
+        DrawText(currentQuestion.c_str(), (float)GetScreenWidth() / 2 - MeasureText(currentQuestion.c_str(), 40) / 2 - 30, (float)GetScreenHeight() / 2 - 200, 40, WHITE);
 
         DrawRectangleRec(textBox, RAYWHITE);
 
+        
         DrawRectangleRec(submitRec, (CheckCollisionPointRec(mousePoint, submitRec) ? PURPLE : GRAY));
+        DrawText("SUBMIT", GetScreenWidth() / 2 + 160, GetScreenHeight() / 2 + 260, 35, WHITE);
 
         if (mouseOnText) DrawRectangleLines((int)textBox.x, (int)textBox.y, (int)textBox.width, (int)textBox.height, { 0, 91, 241, 255 });
-        else DrawRectangleLines((int)textBox.x, (int)textBox.y, (int)textBox.width, (int)textBox.height, { 0, 91, 241, 255 });
+        else DrawRectangleLines((int)textBox.x, (int)textBox.y, (int)textBox.width, (int)textBox.height, WHITE);
 
         DrawText(name, (int)textBox.x + 5, (int)textBox.y + 8, 40, GREEN);
 
