@@ -37,7 +37,7 @@ This is a game about an astronaut from the planet ,,Earth” , but on his last e
 
  
 <h1 align="center">📄 Documents</h1><br>
-   [Documentation](https://codingburgas-my.sharepoint.com/:f:/g/personal/dhnoneva22_codingburgas_bg/EiwbM7_aHAtLqDRJypmMy3YBwVs7ymiE6FiY_Yq_NYNDrA?e=YxBUGO)
+   [Documentation](https://codingburgas-my.sharepoint.com/:f:/g/personal/dhnoneva22_codingburgas_bg/EiwbM7_aHAtLqDRJypmMy3YBwVs7ymiE6FiY_Yq_NYNDrA?e=YxBUGO)    
 <h1 align="center">Used technologies 🗂</h1>
 <p align="center">
     <a href="https://code.visualstudio.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Visual_Studio_Icon_2019.svg/2060px-Visual_Studio_Icon_2019.svg.png" alt="Visual Studio logo" width=48px/></a>
