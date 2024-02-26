@@ -6,8 +6,8 @@ void trueAnswer() {
     SetExitKey(KEY_ESCAPE);
     while (!WindowShouldClose())
     {
+        // Draw trueAnswer() function
         BeginDrawing();
-
         Texture2D bgPhoto = LoadTexture("../images/bgPhoto.png");
         DrawTexture(bgPhoto, 0, 0, WHITE);
         DrawText("Correct", GetScreenWidth() / 2 - 150, GetScreenHeight() / 2, 70, GREEN);
@@ -20,7 +20,7 @@ void wrongAnswer() {
     SetExitKey(KEY_ESCAPE);
     while (!WindowShouldClose())
     {
-        
+        // Draw wrongAnswer() function
         BeginDrawing();
         Texture2D bgPhoto = LoadTexture("../images/bgPhoto.png");
         DrawTexture(bgPhoto, 0, 0, WHITE);
@@ -31,67 +31,89 @@ void wrongAnswer() {
 
 void questions() {
 
+    // Initialize an empty string
     char name[20] = "\0";
+    // Initialize the letter count to zero
     int letterCount = 0;
 
+    // Define a rectangle for the text box and set the bool flag to false
     Rectangle textBox = { GetScreenWidth() / 2 - 10, GetScreenHeight() / 2 + 120, 340, 100 };
     bool mouseOnText = false;
 
+    // Initialize the frames counter to zero
     int framesCounter = 0;
 
+    // Create responsive button
     Rectangle submitRec = { GetScreenWidth() / 2 + 120, GetScreenHeight() / 2 + 240, 210, 70 };
 
+    // Get screen size through variables
     const int screenWidth = 1000;
     const int screenHeight = 1000;
 
+    // Asing a function for exiting the game to exitGame
     bool exitGame = WindowShouldClose();
 
+    // Get random question from the question bank and load texture
     string currentQuestion = questionsArr[GetRandomValue(0, 17)];
-
     Texture2D thinkingAlien = LoadTexture("../images/thinkingAlien.png");
 
     EnableCursor();
     while (!WindowShouldClose())
     {
+        // Get the current mouse position
         Vector2 mousePoint = GetMousePosition();
+
+        // Check if the mouse pointer is within the text box rectangle
         if (CheckCollisionPointRec(mousePoint, textBox)) mouseOnText = true;
         else mouseOnText = false;
 
+        // If the mouse is over the text box
         if (mouseOnText)
         {
+            // Change the mouse cursor to an I-beam cursor
             SetMouseCursor(MOUSE_CURSOR_IBEAM);
 
+            // Get the ASCII value of the pressed key
             int key = GetCharPressed();
 
+            // While there is a key pressed
             while (key > 0)
             {
+                // Check if the key is a printable character and if there's still space
                 if ((key >= 32) && (key <= 125) && (letterCount < 20))
                 {
+                    // Add the character
                     name[letterCount] = (char)key;
                     name[letterCount + 1] = '\0';
                     letterCount++;
                 }
-
+                // Get the next pressed key
                 key = GetCharPressed();
             }
 
+            // If the backspace key is pressed
             if (IsKeyPressed(KEY_BACKSPACE))
             {
                 letterCount--;
+                // Check to make sure that the letter count doesn't go bellow zero
                 if (letterCount < 0) letterCount = 0;
+                // Delete the last letter
                 name[letterCount] = '\0';
 
             }
         }
         else SetMouseCursor(MOUSE_CURSOR_DEFAULT);
 
+        // Increase frame counter if mouse is hovering on the text
         if (mouseOnText) framesCounter++;
         else framesCounter = 0;
 
         if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON) && CheckCollisionPointRec(mousePoint, submitRec))
         {
+            // Iterate through each character in the name
             for (int i = 0; i < letterCount; i++)
             {
+                // Check if the current question matches the assigned answer
                 if (currentQuestion == "How many constellations are there? \n \n a. 88 \n b. 39 \n c. 120" && name[i] == 'a' ||
                     currentQuestion == "How long does each season last on Neptune? \n \n a. 3 months \n b. 30 weeks \n c. more than 40 years" && name[i] == 'c' ||
                     currentQuestion == "How many minutes was the shortest space flight? \n \n a. 60 minutes \n b. 15 minutes \n c. 3 minutes" && name[i] == 'b' ||
@@ -112,11 +134,13 @@ void questions() {
                     currentQuestion == "Which planet is name after the King of the Roman gods? \n \n a. Jupiter \n b. Neptune \n c. Uranus" && name[i] == 'a'
                     )
                 {
+                    // If the answer is correct, call trueAnswer() function and set answer to true
                     trueAnswer();
                     DisableCursor();
                     answer = true;
                 }
                 else {
+                    // If the answer is wrong, call wrongAnswer() function and set answer to false
                     wrongAnswer();
                     DisableCursor();
                     answer = false;
@@ -124,23 +148,27 @@ void questions() {
             }
         }
 
+        // Begin drawing on the window
         BeginDrawing();
+        // Clear the background with a custom color
         ClearBackground({ 0, 1, 41, 255 });
+
+        // Draw different textures, text, and textbox
         DrawTexture(thinkingAlien, 1400, 460, RAYWHITE);
-
         DrawText(currentQuestion.c_str(), (float)GetScreenWidth() / 2 - MeasureText(currentQuestion.c_str(), 40) / 2 - 30, (float)GetScreenHeight() / 2 - 200, 40, WHITE);
-
         DrawRectangleRec(textBox, RAYWHITE);
 
-        
+        // Draw a submit button using rectangle
         DrawRectangleRec(submitRec, (CheckCollisionPointRec(mousePoint, submitRec) ? PURPLE : GRAY));
         DrawText("SUBMIT", GetScreenWidth() / 2 + 160, GetScreenHeight() / 2 + 260, 35, WHITE);
 
+        // Draw rectangle lines around the text box based on whether the mouse is hovering over it or not
         if (mouseOnText) DrawRectangleLines((int)textBox.x, (int)textBox.y, (int)textBox.width, (int)textBox.height, { 0, 91, 241, 255 });
         else DrawRectangleLines((int)textBox.x, (int)textBox.y, (int)textBox.width, (int)textBox.height, WHITE);
 
         DrawText(name, (int)textBox.x + 5, (int)textBox.y + 8, 40, GREEN);
 
+        // End drawing
         EndDrawing();
     }
 }

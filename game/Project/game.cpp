@@ -239,7 +239,7 @@ void game()
         // Draw timer
         DrawText(TextFormat("%02d:%02d", minutes, seconds), 930, 40, 50, RED);
 
-        //Draw teh amount of collected parts
+        //Draw the amount of collected parts
         DrawText(TextFormat("%01d", collectedParts), 1700, 40, 50, WHITE);
         DrawText("/6", 1730, 40, 50, WHITE);
 
