@@ -1,13 +1,18 @@
-﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(534,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Project.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Project.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  game.cpp
+C:\Users\Asus\Documents\AW\2324-space-sprint-project-astroworld\game\Project\game.cpp(21,16): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Asus\Documents\AW\2324-space-sprint-project-astroworld\game\Project\game.cpp(137,49): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Asus\Documents\AW\2324-space-sprint-project-astroworld\game\Project\game.cpp(137,44): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   questions.cpp
-C:\Users\zvyankova22\source\repos\2324-space-sprint-project-astroworld\game\Project\questions.cpp(53,48): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\zvyankova22\source\repos\2324-space-sprint-project-astroworld\game\Project\questions.cpp(53,48): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\zvyankova22\source\repos\2324-space-sprint-project-astroworld\game\Project\questions.cpp(53,76): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\zvyankova22\source\repos\2324-space-sprint-project-astroworld\game\Project\questions.cpp(53,76): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\zvyankova22\source\repos\2324-space-sprint-project-astroworld\game\Project\questions.cpp(58,50): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\zvyankova22\source\repos\2324-space-sprint-project-astroworld\game\Project\questions.cpp(58,50): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\zvyankova22\source\repos\2324-space-sprint-project-astroworld\game\Project\questions.cpp(58,79): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\zvyankova22\source\repos\2324-space-sprint-project-astroworld\game\Project\questions.cpp(58,79): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\zvyankova22\source\repos\2324-space-sprint-project-astroworld\game\Project\questions.cpp(147,153): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\zvyankova22\source\repos\2324-space-sprint-project-astroworld\game\Project\questions.cpp(147,118): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Project.vcxproj -> C:\Users\zvyankova22\source\repos\2324-space-sprint-project-astroworld\game\x64\Debug\ASTROWORLD.exe
+C:\Users\Asus\Documents\AW\2324-space-sprint-project-astroworld\game\Project\questions.cpp(56,48): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\Asus\Documents\AW\2324-space-sprint-project-astroworld\game\Project\questions.cpp(56,48): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Asus\Documents\AW\2324-space-sprint-project-astroworld\game\Project\questions.cpp(56,76): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\Asus\Documents\AW\2324-space-sprint-project-astroworld\game\Project\questions.cpp(56,76): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Asus\Documents\AW\2324-space-sprint-project-astroworld\game\Project\questions.cpp(61,50): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\Asus\Documents\AW\2324-space-sprint-project-astroworld\game\Project\questions.cpp(61,50): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Asus\Documents\AW\2324-space-sprint-project-astroworld\game\Project\questions.cpp(61,79): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\Asus\Documents\AW\2324-space-sprint-project-astroworld\game\Project\questions.cpp(61,79): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Asus\Documents\AW\2324-space-sprint-project-astroworld\game\Project\questions.cpp(150,153): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Asus\Documents\AW\2324-space-sprint-project-astroworld\game\Project\questions.cpp(150,118): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+  Project.vcxproj -> C:\Users\Asus\Documents\AW\2324-space-sprint-project-astroworld\game\x64\Debug\ASTROWORLD.exe

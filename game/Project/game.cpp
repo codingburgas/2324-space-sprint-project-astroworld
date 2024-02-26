@@ -58,7 +58,7 @@ void game()
     Texture2D bgPhoto = LoadTexture("../images/bgPhoto.png");
 
     // Timer's parameters
-    int minutes = 5;
+    int minutes = 3;
     int seconds = 0;
 
     // Update timer every second

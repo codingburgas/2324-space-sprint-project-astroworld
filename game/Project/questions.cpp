@@ -26,8 +26,10 @@ void trueAnswer() {
     while (!WindowShouldClose())
     {
         BeginDrawing();
-        ClearBackground(WHITE);
-        DrawText("Correct", 500, 500, 50, GREEN);
+
+        Texture2D bgPhoto = LoadTexture("../images/bgPhoto.png");
+        DrawTexture(bgPhoto, 0, 0, WHITE);
+        DrawText("Correct", GetScreenWidth() / 2 - 150, GetScreenHeight() / 2, 70, GREEN);
         EndDrawing();
     }
 
@@ -39,8 +41,9 @@ void wrongAnswer() {
     {
         
         BeginDrawing();
-        ClearBackground(WHITE);
-        DrawText("Incorrect", 500, 500, 50, RED);
+        Texture2D bgPhoto = LoadTexture("../images/bgPhoto.png");
+        DrawTexture(bgPhoto, 0, 0, WHITE);
+        DrawText("Incorrect", GetScreenWidth() / 2 - 150, GetScreenHeight() / 2, 70, RED);
         EndDrawing();
     }
 }
