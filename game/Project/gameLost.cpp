@@ -4,11 +4,14 @@
 
 void gameLost()
 {
+	//Initialise screen width and height
 	const int screenHeight = 975;
 	const int screenWidth = 1920;
 
+	//Declare photo as texture
 	Texture2D sadAstronaut = LoadTexture("../images/sadAstronaut.png");
 
+	//Declare button boxes
 	Rectangle tryAgain = { GetScreenWidth() / 2 - 600, GetScreenHeight() / 2 - 10, 300, 90 };
 	Rectangle exitButton = { GetScreenWidth() / 2 + 250, GetScreenHeight() / 2 - 10, 300, 90 };
 	
@@ -22,10 +25,15 @@ void gameLost()
 
 		BeginDrawing();
 
+		//Display background color
 		ClearBackground({ 0, 1, 41, 255 });
-		DrawTexture(sadAstronaut, 700, 400, RAYWHITE);
-		DrawText("Game over! You lost!", 580, 150, 80, WHITE);
 
+		//Draw photo texture
+		DrawTexture(sadAstronaut, 700, 400, RAYWHITE);
+
+		DrawText("Game over! You lost!", 580, 150, 80, WHITE); //Game lost
+
+		//Check if "Try again" button is pressed
 		bool isMouseOverTryAgain = CheckCollisionPointRec(mousePosition, tryAgain);
 
 		DrawRectangleRec(tryAgain, (isMouseOverTryAgain ? RED : PURPLE));
@@ -35,6 +43,7 @@ void gameLost()
 			game();
 		}
 
+		//Check if "Exit game" button is pressed
 		bool isMouseOverExitGame = CheckCollisionPointRec(mousePosition, exitButton);
 
 		DrawRectangleRec(exitButton, (isMouseOverExitGame ? RED : PURPLE));

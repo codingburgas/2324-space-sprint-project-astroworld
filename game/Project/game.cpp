@@ -4,8 +4,10 @@
 #include "questions.h"
 #include "gameWon.h"
 
-#define ROCKS 200
+#define ROCKS 450
 bool answer;
+
+//Declare collected parts
 int collectedParts = 0;
 
 // Structure for spacecraft parts
@@ -136,7 +138,7 @@ void game()
     for (int i = 0; i < ROCKS; i++)
     {
         heights[i] = (float)GetRandomValue(0.9, 1.0);
-        rockPositions[i] = { (float)GetRandomValue(-110,110), heights[i] / 2.0f, (float)GetRandomValue(-100, 100) };
+        rockPositions[i] = { (float)GetRandomValue(-149,149), heights[i] / 2.0f, (float)GetRandomValue(-100, 100) };
     }
     DisableCursor();
     SetTargetFPS(240);
@@ -170,12 +172,13 @@ void game()
 
         ClearBackground(RAYWHITE);
 
+        //Draw background photo
         DrawTexture(bgPhoto, 0, 0, WHITE);
 
         BeginMode3D(camera);
 
         // Draw ground
-        DrawPlane({ 0.0f, 0.0f, 0.0f }, { 250.0f, 250.0f }, { 192, 96, 0, 250 });
+        DrawPlane({ 0.0f, 0.0f, 0.0f }, { 300.0f, 300.0f }, { 192, 96, 0, 250 });
 
         // Draw rocks
         for (int i = 0; i < ROCKS; i++)
@@ -210,16 +213,16 @@ void game()
                     questions();
                     if (answer) 
                     {
-                        part.visible = false;
+                        part.visible = false; //Parts disappear
                         collectedParts++;
                     }
                     else 
                     {
-                        part.visible = true;
+                        part.visible = true; //Parts don't disappear
                     }
-                    if (collectedParts == 6)
+                    if (collectedParts == 1)
                     {
-                        gameWon();
+                        gameWon(); //End game 
                     }
                 }
             }
@@ -228,6 +231,8 @@ void game()
         EndMode3D();
         // Draw timer
         DrawText(TextFormat("%02d:%02d", minutes, seconds), 930, 40, 50, RED);
+
+        //Draw teh amount of collected parts
         DrawText(TextFormat("%01d", collectedParts), 1700, 40, 50, WHITE);
         DrawText("/6", 1730, 40, 50, WHITE);
 

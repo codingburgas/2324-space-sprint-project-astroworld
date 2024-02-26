@@ -1,6 +1,6 @@
 #pragma once
 #include "pch.h"
 
-void rules();
-void controls();
-void story();
+void rules(); //Initialise rules function
+void controls(); //Initialise controls function
+void story(); //Initialise story function

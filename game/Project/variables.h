@@ -2,6 +2,7 @@
 
 #include "pch.h"
 
+//Initialise questions array
 extern string questionsArr[18] = { "How many constellations are there? \n \n a. 88 \n b. 39 \n c. 120",
 	"How long does each season last on Neptune? \n \n a. 3 months \n b. 30 weeks \n c. more than 40 years",
 	"How many minutes was the shortest space flight? \n \n a. 60 minutes \n b. 15 minutes \n c. 3 minutes",
@@ -21,6 +22,7 @@ extern string questionsArr[18] = { "How many constellations are there? \n \n a. 
 	"Who was the first astronaut to walk on the moon? \n \n a. Charles Duke \n b. Neil Armstrong \n c. Buzz Aldrin",
 	"Which planet is name after the King of the Roman gods? \n \n a. Jupiter \n b. Neptune \n c. Uranus" };
 
+//Initialise question answers array
 extern char answers[18] = {
 	'a',
 	'c',
@@ -42,8 +44,8 @@ extern char answers[18] = {
 	'a',
 };
 
-extern int questionsLength = 15;
+extern int questionsLength = 18;
 
-extern bool isAnswerTrue = false;
+extern bool isAnswerTrue = false; //Declare a boolean
 
-extern string currentQuestion = "";
+extern string currentQuestion = ""; //Declare current question variable
