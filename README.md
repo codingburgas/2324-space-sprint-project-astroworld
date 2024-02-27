@@ -37,7 +37,12 @@ This is a game about an astronaut from the planet ,,Earth” , but on his last e
 
  
 <h1 align="center">📄 Documents</h1><br>
-   [Documentation](https://codingburgas-my.sharepoint.com/:f:/g/personal/dhnoneva22_codingburgas_bg/EiwbM7_aHAtLqDRJypmMy3YBwVs7ymiE6FiY_Yq_NYNDrA?e=YxBUGO)    
+  <ul>
+<li><a href="https://codingburgas-my.sharepoint.com/:w:/g/personal/dhnoneva22_codingburgas_bg/EQuZjkRNablMs7is5p5smNABh8NOsTQa_KCEjrlXgPOaHQ">Documentation</a></li>
+<li><a href="https://codingburgas-my.sharepoint.com/:p:/g/personal/dhnoneva22_codingburgas_bg/EVD4HyPBV0BBi1xlfaSWozIB9fsv9mD25zsouqsH1v225Q">Presentation</a></li>
+<li><a href="https://codingburgas-my.sharepoint.com/:x:/g/personal/dhnoneva22_codingburgas_bg/Ec6U6SybOitLv1mW3YcCb2wBZZD2ZJBMyp0zv5M3apGuvw">QA Table</a></li>    
+<li><a href="https://codingburgas-my.sharepoint.com/:w:/g/personal/dhnoneva22_codingburgas_bg/Ed-X-a3YHcVKsFLrk_-nqp0BnKBjTRVi23V_W8ow-pwO2A">Test Plan</a></li>
+</ul>    
 <h1 align="center">Used technologies 🗂</h1>
 <p align="center">
     <a href="https://code.visualstudio.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Visual_Studio_Icon_2019.svg/2060px-Visual_Studio_Icon_2019.svg.png" alt="Visual Studio logo" width=48px/></a>
